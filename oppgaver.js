@@ -50,20 +50,39 @@ function celsiusTilFahrenheit(celsius) {
 //     Returner summen av alle tallene i en array. Bruk en for-løkke.
 function sum(tall) {
   // LØSNING
-  
+  let number1 = 0
+  for (let i = 0; i < tall.length; i++) {
+    number1 = number1 + tall[i];
+  }
+  return number1;
 }
+console.log(sum(temperaturer));
 
 // Oppgave 5: Returner gjennomsnittet av tallene. Gjenbruk sum()!
 function gjennomsnitt(tall) {
   // LØSNING
+  let snitt = (sum(tall) / tall.length)
+  return snitt;
 }
+console.log(gjennomsnitt(temperaturer));
+// Hadde temperaturer istedet for 'tall' etter let snitt=. Brukte KI til å finne feilen.
 
 // Oppgave 6: Hvor mange dager med kuldegrader var det? (Trenger du vinterdekk?)
 //     Returner HVOR MANGE tall som er under 0. Bruk for-løkke + if.
 function antallUnderNull(tall) {
   // LØSNING
+  let subzero = 0
+  for (let i = 0; i < tall.length; i++) {
+    if (tall[i] < 0) {
+      subzero = subzero + 1
+    }
+    else {
+      subzero = subzero
+    }
+  }
+  return subzero;
 }
-
+console.log(antallUnderNull(temperaturer));
 
 // ---------- RØD ----------
 
@@ -71,6 +90,16 @@ function antallUnderNull(tall) {
 //     Returner det største tallet i arrayen – UTEN Math.max og UTEN .sort()
 function storste(tall) {
   // LØSNING
+  let høytall = 0
+  for (let i = 0; i < tall.length; i++) {
+    if (høytall < tall[i]) {
+      høytall = tall[i]
+    }
+    else {
+      høytall = høytall
+    }
+  }
+  return høytall;
 }
 
 // Oppgave 8: Returner en NY array med bare kuldegradene (tall under 0).
