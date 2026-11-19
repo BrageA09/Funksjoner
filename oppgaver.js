@@ -50,6 +50,7 @@ function celsiusTilFahrenheit(celsius) {
 //     Returner summen av alle tallene i en array. Bruk en for-løkke.
 function sum(tall) {
   // LØSNING
+  
 }
 
 // Oppgave 5: Returner gjennomsnittet av tallene. Gjenbruk sum()!
