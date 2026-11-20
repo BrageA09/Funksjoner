@@ -106,6 +106,7 @@ function storste(tall) {
 //     Den opprinnelige arrayen skal ikke endres.
 function bareKuldegrader(tall) {
   // LØSNING
+  
 }
 
 // Oppgave 9: Sorter tallene fra lavest til høyest – UTEN .sort().
