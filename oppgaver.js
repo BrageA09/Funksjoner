@@ -106,6 +106,7 @@ function storste(tall) {
 //     Den opprinnelige arrayen skal ikke endres.
 function bareKuldegrader(tall) {
   // LØSNING
+  let minustemperturer = [];
   
 }
 
