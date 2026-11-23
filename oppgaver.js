@@ -32,17 +32,18 @@ function hilsen(navn) {
 //     Returner arealet av et rektangel (bredde ganger høyde)
 function rektangelAreal(bredde, hoyde) {
   // LØSNING
-  return 4 * 5;
+  return bredde * hoyde;
 }
+console.log(rektangelAreal(4,5))
 
 // Oppgave 3: En venn i USA spør på Discord hvor kaldt det er i Tromsø.
 //     Gjør om celsius til fahrenheit.  Formel: F = C * 9/5 + 32
 //     (Den motsatte formelen er C = (F - 32) * 5/9.)
 function celsiusTilFahrenheit(celsius) {
   // LØSNING
-  return temperaturer[0]*(9/5)+32;
+  return celsius[0]*(9/5)+32;
 }
-
+console.log(celsiusTilFahrenheit(temperaturer))
 
 // ---------- GUL ----------
 
@@ -76,9 +77,7 @@ function antallUnderNull(tall) {
     if (tall[i] < 0) {
       subzero = subzero + 1
     }
-    else {
-      subzero = subzero
-    }
+    else {}
   }
   return subzero;
 }
@@ -95,26 +94,34 @@ function storste(tall) {
     if (høytall < tall[i]) {
       høytall = tall[i]
     }
-    else {
-      høytall = høytall
-    }
+    else {}
   }
   return høytall;
 }
+console.log(storste(temperaturer));
 
 // Oppgave 8: Returner en NY array med bare kuldegradene (tall under 0).
 //     Den opprinnelige arrayen skal ikke endres.
 function bareKuldegrader(tall) {
   // LØSNING
-  let minustemperturer = [];
-  
+  const minustemperturer = [];
+  for (let i = 0; i < tall.length; i++) {
+    if (tall[i] < 0) {
+      minustemperturer.push(tall[i]);
+    }
+    else {}
+  }
+  return minustemperturer;
 }
+console.log(bareKuldegrader(temperaturer));
 
 // Oppgave 9: Sorter tallene fra lavest til høyest – UTEN .sort().
 //     Lag din egen sorteringsalgoritme (f.eks. boblesortering).
 //     Returner en NY array, ikke endre den opprinnelige.
+
+const sortert = []
 function sorterStigende(tall) {
-  // LØSNING
+  
 }
 
 
@@ -134,7 +141,7 @@ const runder = [120, 85, 140, 95, 110];
 function lagGamertag(navn, tall) {
   // LØSNING
 }
-
+ 
 
 // Oppgave 11: Er spilleren gammel nok til spillet? Returner true eller false.
 //     erGammelNok(16, 18) -> false
