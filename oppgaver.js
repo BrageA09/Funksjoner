@@ -118,12 +118,9 @@ console.log(bareKuldegrader(temperaturer));
 // Oppgave 9: Sorter tallene fra lavest til høyest – UTEN .sort().
 //     Lag din egen sorteringsalgoritme (f.eks. boblesortering).
 //     Returner en NY array, ikke endre den opprinnelige.
-
-const sortert = []
 function sorterStigende(tall) {
   
 }
-
 
 // #####################################################
 // DEL 2: SPILL (oppgave 10–14)
