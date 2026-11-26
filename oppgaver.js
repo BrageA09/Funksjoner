@@ -119,8 +119,22 @@ console.log(bareKuldegrader(temperaturer));
 //     Lag din egen sorteringsalgoritme (f.eks. boblesortering).
 //     Returner en NY array, ikke endre den opprinnelige.
 function sorterStigende(tall) {
-  
+  let flyttet = false;
+  for (let i = 0; i < sortTemp.length; i++) {
+    flyttet = false;
+    for (let j = 0; j < sortTemp.length - i - 1; j++) {
+      if (tall[j] > tall[j + 1]) {
+        [tall[j], tall[j + 1]] = [tall[j + 1], tall[j]]
+        flyttet = true;
+      }
+    }
+    if(flyttet === false)  break;
+  }
+  return tall;
 }
+
+let sortTemp = temperaturer;
+console.log(sorterStigende(sortTemp, sortTemp.length));
 
 // #####################################################
 // DEL 2: SPILL (oppgave 10–14)
@@ -137,8 +151,10 @@ const runder = [120, 85, 140, 95, 110];
 //     lagGamertag("Ola", 99) -> "Ola99"
 function lagGamertag(navn, tall) {
   // LØSNING
-}
- 
+  Gamertag = navn + tall
+  return Gamertag;
+} 
+console.log(lagGamertag("Ola",99))
 
 // Oppgave 11: Er spilleren gammel nok til spillet? Returner true eller false.
 //     erGammelNok(16, 18) -> false
@@ -146,7 +162,15 @@ function lagGamertag(navn, tall) {
 //     Tips: return alder >= grense;  (sammenligningen gir true/false)
 function erGammelNok(alder, grense) {
   // LØSNING
+  if (alder >= grense) {
+    gammelNok = true;
+    return gammelNok;
+  } else {
+    gammelNok = false;
+    return gammelNok;
+  }
 }
+console.log(erGammelNok(17,16));
 
 // Oppgave 12: BreiLAN innfører billettpriser. VG1 betaler 100 kr og resten av skolen 150 kr.
 //     Lag en funksjon som sjekker om eleven går på VG1 og gir riktig pris.
@@ -155,8 +179,12 @@ function erGammelNok(alder, grense) {
 //     Tips: bruk if og else.
 function billettpris(erVG1) {
   // LØSNING
+  if(erVG1 == true) {
+    return 100;
+  } else {
+    return 150;
+  }
 }
-
 
 // ---------- GUL ----------
 
@@ -170,15 +198,26 @@ function billettpris(erVG1) {
 //     velgFraksjon(4500, 5500, "Horde")    -> "The faction is currently unavailable on this ruleset due to population imbalance"
 //
 //     Tips: andel = antall i valgt fraksjon / totalt * 100
+
 function velgFraksjon(alliance, horde, valg) {
-  // LØSNING
+  if(alliance <= horde && valg == "Alliance") {
+    return "Welcome to the Alliance!";
+  } else if(horde <= alliance && valg == "Horde") {
+    return "Welcome to the Horde!";
+  } else if(alliance > horde && valg == "Alliance" || horde > alliance && valg == "Horde") {
+    return "The faction is currently unavailable on this ruleset due to population imbalance";
+  }
 }
 
 // Oppgave 14: Hvor mange runder fikk laget MER enn grensen?
 //     antallOver(runder, 100) -> 3
 //     Tips: samme oppskrift som antallUnderNull() i oppgave 6.
 function antallOver(poeng, grense) {
-  // LØSNING
+  for(let i = 0; i < poeng.length; i++) {
+    if(poeng[i] > grense){
+      
+    }      
+  }
 }
 
 
