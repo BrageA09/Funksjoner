@@ -271,7 +271,7 @@ const resultater = [
 //     kanDelta(16, "GTA 6")    -> false
 //     kanDelta(16, "Fortnite") -> true
 function kanDelta(alder, spill) {
-  // LØSNING
+  return erGammelNok(alder, aldersgrenser[spill]);
 }
 
 
@@ -281,7 +281,11 @@ function kanDelta(alder, spill) {
 //     Gjenbruk billettpris() fra oppgave 12! deltakere[i].vg1 er true eller false.
 //     totalInntekt(deltakere) -> 700
 function totalInntekt(deltakere) {
-  // LØSNING
+  let intekt = 0
+  for(let i = 0; i < deltakere.length; i++) {
+    intekt = intekt + billettpris(deltakere[i].vg1);
+  }
+  return intekt;
 }
 
 
@@ -292,8 +296,22 @@ function totalInntekt(deltakere) {
 //     UTEN .sort(). Arrayen resultater skal ikke endres.
 //     toppTre(resultater) -> ["Kari", "Jonas", "Ali"]
 function toppTre(resultater) {
-  // LØSNING
+  const resultatkopi = [...resultater]
+  let flyttet2 = false;
+  for (let i = 0; i < resultatkopi.length; i++) {
+    flyttet2 = false;
+    for (let j = 0; j < resultatkopi.length - i - 1; j++) {
+      if (resultatkopi[j].poeng < resultatkopi[j + 1].poeng) {
+        [resultatkopi[j], resultatkopi[j + 1]] = [resultatkopi[j + 1], resultatkopi[j]]
+        flyttet2 = true;
+      }
+    }
+    if(flyttet2 === false)  break;
+  }
+  return  [resultatkopi[0].navn, resultatkopi[1].navn, resultatkopi[2].navn];
 }
+
+
 
 
 
@@ -304,9 +322,9 @@ function toppTre(resultater) {
 // #####################################################
 //
 // Skriv en kort egenvurdering av arbeidet ditt. Skriv rett etter kolonet.
-// Dette fikk jeg godt til:
-// Dette var vanskelig:
-// Dette vil jeg øve mer på:
+// Dette fikk jeg godt til: Jeg fikk starten godt til, de mindre oppgavene. Veldig artig å få til de vanskelige etter man plages lenge da.
+// Dette var vanskelig: Jeg syntes at det var veldig vanskelig med å få putte funksjoner inn i andre funksjoner- å få de til å passe.
+// Dette vil jeg øve mer på: Funksjoner i funksjoner. Ser ut som noe som er lurt å være god på, føler meg ikke selvsikker på det feltet i det hele tatt.
 
 
 
