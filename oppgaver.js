@@ -213,11 +213,13 @@ function velgFraksjon(alliance, horde, valg) {
 //     antallOver(runder, 100) -> 3
 //     Tips: samme oppskrift som antallUnderNull() i oppgave 6.
 function antallOver(poeng, grense) {
+  let overgrense = 0
   for(let i = 0; i < poeng.length; i++) {
     if(poeng[i] > grense){
-      
+      overgrense = overgrense + 1
     }      
   }
+  return overgrense;
 }
 
 
